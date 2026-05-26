@@ -1,1 +1,1 @@
-console.log("Recommendation System Loaded");
+console.log("IntelliRecommend Loaded");

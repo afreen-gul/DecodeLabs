@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Smart Recommendation System</title>
+    <title>IntelliRecommend</title>
 
     <link
         rel="stylesheet"
@@ -17,21 +17,27 @@
 
 <body>
 
+    <div class="overlay"></div>
+
     <div class="container">
 
-        <h1>AI Recommendation System</h1>
+        <h1>IntelliRecommend</h1>
+
+        <p class="subtitle">
+            AI-Powered Recommendation Engine
+        </p>
 
         <form method="POST">
 
             <input
                 type="text"
                 name="interests"
-                placeholder="Enter your interests..."
+                placeholder="Enter interests like AI, books, football..."
                 required
             >
 
             <button type="submit">
-                Recommend
+                Get Recommendations
             </button>
 
         </form>
@@ -40,17 +46,37 @@
 
         <div class="results">
 
-            <h2>Recommendations</h2>
+            {% for item in recommendations %}
 
-            <ul>
+            <div class="card">
 
-                {% for item in recommendations %}
+                <h2>{{ item.title }}</h2>
 
-                    <li>{{ item }}</li>
+                <p>
+                    Category:
+                    <span>{{ item.category }}</span>
+                </p>
 
-                {% endfor %}
+                <p>
+                    Rating:
+                    ⭐ {{ item.rating }}
+                </p>
 
-            </ul>
+                <p>
+                    AI Match:
+                    <span class="confidence">
+                        {{ item.confidence }}%
+                    </span>
+                </p>
+
+                <p>
+                    Matched Keywords:
+                    {{ item.matched | join(', ') }}
+                </p>
+
+            </div>
+
+            {% endfor %}
 
         </div>
 

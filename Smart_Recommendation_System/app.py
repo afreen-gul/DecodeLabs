@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from recommender import get_recommendations
+from recommendation_engine import recommend_items
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def home():
 
         user_input = request.form["interests"]
 
-        recommendations = get_recommendations(user_input)
+        recommendations = recommend_items(user_input)
 
     return render_template(
         "index.html",
