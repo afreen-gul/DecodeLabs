@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartClassify AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+
+    <div class="container">
+
+        <div class="left-section">
+
+            <h1>SmartClassify AI</h1>
+
+            <p class="subtitle">
+                Professional Iris Flower Classification System
+            </p>
+
+            <div class="info-box">
+
+                <h3>AI Model Features</h3>
+
+                <ul>
+
+                    <li>Random Forest Classification</li>
+                    <li>Machine Learning Prediction</li>
+                    <li>Trained on Iris Dataset</li>
+                    <li>Real-time Flower Classification</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="right-section">
+
+            <form method="POST">
+
+                <div class="input-group">
+
+                    <label>Sepal Length</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="sepal_length"
+                        placeholder="Enter sepal length"
+                        required
+                    >
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Sepal Width</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="sepal_width"
+                        placeholder="Enter sepal width"
+                        required
+                    >
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Petal Length</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="petal_length"
+                        placeholder="Enter petal length"
+                        required
+                    >
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Petal Width</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="petal_width"
+                        placeholder="Enter petal width"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit">
+
+                    Predict Flower Species
+
+                </button>
+
+            </form>
+
+            {% if prediction %}
+
+            <div class="result-card">
+
+                <h2>Prediction Result</h2>
+
+                <p>{{ prediction }}</p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
