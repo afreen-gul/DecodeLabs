@@ -1,14 +1,19 @@
-# Smart Recommendation System
+# IntelliRecommend
 
-A simple AI-based recommendation system built using Python Flask.
+Professional AI-powered recommendation system built using Python Flask.
+
+---
 
 ## Features
 
-- User interest input
-- Rule-based recommendation engine
-- Fast keyword matching
-- Clean UI
-- Beginner friendly AI project
+- AI recommendation engine
+- Weighted similarity matching
+- Recommendation confidence score
+- Professional dashboard UI
+- Multi-category recommendation
+- Dynamic ranking system
+
+---
 
 ## Technologies Used
 
@@ -18,38 +23,54 @@ A simple AI-based recommendation system built using Python Flask.
 - CSS
 - JavaScript
 
+---
+
 ## Installation
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/afreen-gul/DecodeLabs/Smart_Recommendation_System.git
+git clone https://github.com/afreen-gul/DecodeLabs.git
 ```
 
-### Move into folder
+### Open Folder
 
 ```bash
-cd Smart-Recommendation-System
+cd IntelliRecommend
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run project
+### Run Application
 
 ```bash
 python app.py
 ```
 
+---
+
 ## Example Inputs
 
-- technology
-- music
-- books
-- sports
+- ai coding
+- football sports
+- productivity books
+- science movies
+
+---
+
+## Future Improvements
+
+- Machine Learning Integration
+- User Authentication
+- Database Support
+- NLP Recommendation Engine
+- Collaborative Filtering
+
+---
 
 ## Author
 
