@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RuleBot — Rule-Based AI Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <div class="nav-logo">
+        <span class="rb">Rule</span><span class="bot">Bot</span>
+      </div>
+      <div class="nav-divider"></div>
+      <span class="nav-tag">Rule-Based AI · Python</span>
+    </div>
+    <div class="toggle-wrap">
+      <span class="toggle-label">DARK</span>
+      <label class="toggle">
+        <input type="checkbox" id="themeToggle" checked />
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="hero">
+      <p class="hero-kicker">Rule-Based AI Project <span>·</span> Python + Flask</p>
+      <h1 class="hero-title">
+        <span class="t1">Rule</span><span class="t2">Bot</span>
+      </h1>
+      <p class="hero-sub">A simple rule-based chatbot — powered by if-else logic, zero machine learning.</p>
+      <p class="hero-uni">Built with Python · Flask · HTML · CSS · JavaScript</p>
+    </div>
+
+    <!-- PROJECT INFO CARDS -->
+    <section class="info-section">
+      <div class="cards-row">
+        <div class="info-card" style="animation-delay:0.5s">
+          <span class="info-icon">🧠</span>
+          <div class="info-card-title">Rule Engine</div>
+          <div class="info-card-desc">Matches user input against keyword patterns using if-else decision trees.</div>
+        </div>
+        <div class="info-card" style="animation-delay:0.62s">
+          <span class="info-icon">🔁</span>
+          <div class="info-card-title">Continuous Loop</div>
+          <div class="info-card-desc">Runs in a while True loop — always listening, always responding.</div>
+        </div>
+        <div class="info-card" style="animation-delay:0.74s">
+          <span class="info-icon">⚗️</span>
+          <div class="info-card-title">Flask Backend</div>
+          <div class="info-card-desc">Python Flask serves the UI and handles chat requests via a REST API.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAT WINDOW -->
+    <section class="chat-section">
+      <div class="window-card">
+
+        <!-- Window chrome bar -->
+        <div class="window-bar">
+          <div class="window-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span class="window-title">RuleBot — Chat Interface</span>
+          <div class="window-spacer"></div>
+        </div>
+
+        <!-- Two-column layout -->
+        <div class="chat-body">
+
+          <!-- LEFT: Chat -->
+          <div class="chat-col">
+            <div class="chat-messages" id="messages">
+              <div class="msg bot">
+                <div class="avatar">🤖</div>
+                <div class="bubble">Hey! I'm <strong>RuleBot</strong> — a rule-based chatbot built with Python &amp; Flask. Try saying <em>hello</em>, ask for a <em>joke</em>, or type <em>help</em>!</div>
+              </div>
+            </div>
+
+            <!-- Typing indicator -->
+            <div class="typing-indicator" id="typing">
+              <div class="avatar">🤖</div>
+              <div class="bubble"><span class="dot-anim"></span><span class="dot-anim"></span><span class="dot-anim"></span></div>
+            </div>
+
+            <!-- Quick suggestions -->
+            <div class="suggestions">
+              <button onclick="sendSuggestion('Hello')">👋 Hello</button>
+              <button onclick="sendSuggestion('Tell me a joke')">😂 Joke</button>
+              <button onclick="sendSuggestion('What time is it')">⏰ Time</button>
+              <button onclick="sendSuggestion('What is the weather')">🌤 Weather</button>
+              <button onclick="sendSuggestion('Help')">🆘 Help</button>
+              <button onclick="sendSuggestion('Goodbye')">👋 Bye</button>
+            </div>
+
+            <!-- Input -->
+            <div class="input-bar">
+              <input type="text" id="userInput" placeholder="Type a message…" autocomplete="off"/>
+              <button class="send-btn" id="sendBtn" onclick="sendMessage()">Send ➤</button>
+            </div>
+          </div>
+
+          <!-- RIGHT: Rule table -->
+          <div class="rules-col">
+            <div class="rules-label">// rule engine</div>
+            <table class="rule-table">
+              <thead>
+                <tr><th>Input Pattern</th><th>Category</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>hi / hello / hey</td><td>Greeting</td></tr>
+                <tr><td>bye / goodbye</td><td>Exit</td></tr>
+                <tr><td>weather / forecast</td><td>Weather</td></tr>
+                <tr><td>joke / funny</td><td>Humor</td></tr>
+                <tr><td>time / clock</td><td>Live Time</td></tr>
+                <tr><td>date / today</td><td>Live Date</td></tr>
+                <tr><td>who are you</td><td>Identity</td></tr>
+                <tr><td>help / commands</td><td>Help Menu</td></tr>
+                <tr><td>love / like you</td><td>Affection</td></tr>
+                <tr><td>thanks / thank you</td><td>Gratitude</td></tr>
+                <tr><td><em>anything else</em></td><td>Fallback</td></tr>
+              </tbody>
+            </table>
+
+            <div class="tech-block">
+              <div class="rules-label" style="margin-top:1.25rem">// tech stack</div>
+              <div class="tech-pills">
+                <span>🐍 Python 3</span>
+                <span>⚗️ Flask</span>
+                <span>🌐 HTML5</span>
+                <span>🎨 CSS3</span>
+                <span>⚡ JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      RuleBot &nbsp;·&nbsp; Rule-Based AI Chatbot &nbsp;·&nbsp; Python + Flask &nbsp;·&nbsp; if-else logic
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('change', () => {
+      document.documentElement.setAttribute('data-theme', toggle.checked ? 'dark' : 'light');
+      document.querySelector('.toggle-label').textContent = toggle.checked ? 'DARK' : 'LIGHT';
+    });
+  </script>
+</body>
+</html>
